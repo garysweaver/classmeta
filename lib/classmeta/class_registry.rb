@@ -12,7 +12,7 @@ module Classmeta
         # re-meta, so the class that was derived from can be reloaded
         arr[0].meta(arr[1])
       else
-        puts "Didn't find anything for name #{name} in Classmeta's class registry: #{@@registry.inspect}"
+        #puts "Didn't find anything for name #{name} in Classmeta's class registry: #{@@registry.inspect}"
         nil
       end
     end
