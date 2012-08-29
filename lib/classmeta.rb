@@ -1,0 +1,6 @@
+require 'classmeta/version'
+require 'classmeta/class'
+require 'classmeta/class_registry'
+require 'classmeta/dependencies'
+require 'classmeta/echo'
+require 'classmeta/options'
