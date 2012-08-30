@@ -1,4 +1,4 @@
-Classmeta for Rails 3.2+
+Classmeta for Rails 3.x+ and Ruby 1.9
 =====
 
 Creates new classes on the fly to allow you to refactor common changes.
@@ -80,6 +80,9 @@ Note: if you define `Classmeta::Options.configure({...})`, it automatically gets
     })
 
 ### Troubleshooting
+
+
+It might work with Rails 2.3, depending on whether the Railtie is compatible or not. Ruby 1.9 is expected because of the way SecureRandom is abused for classes that aren't given a defined name via named_meta. We could perhaps use something else, or the deprecated ActiveSupport::SecureRandom instead, but Rails 3.1+ suggests using Ruby 1.9's SecureRandom, so there you go! If you want it to work in Ruby 1.8, maybe you could implement SecureRandom and have it delegate to ActiveSupport::SecureRandom, or just implement some other SecureRandom class that provides a SecureRandom class with a uuid method that returns a unique string (we gsub('-','') it and tack it onto the parent class's name to have a valid classname.
 
 Since Classmeta delegates to Rails's dependency loading, any errors you get like this:
 
