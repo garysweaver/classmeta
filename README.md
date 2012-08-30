@@ -1,7 +1,7 @@
 Classmeta for Rails 3.2+
 =====
 
-Creates new classes on the fly, to allow you to refactor common changes.
+Creates new classes on the fly to allow you to refactor common changes.
 
 Lets say you wanted whitelisted attributes to be different depending which class was including it as an association.
 
@@ -12,8 +12,6 @@ In car, you only want the names of passengers:
 In train, you want their seat preference:
 
     has_many :riders, class_name: Person.meta(:std, attrs: [:name, :seat_preference]).name
-
-etc. You have a ton of these for whatever reason.
 
 So, include the gem in Gemfile and bundle install:
 
@@ -45,11 +43,11 @@ Works with class reloading or caching.
 
 ### Why?
 
-Useful if you have a number of classes, like models, in Rails 3.2+ that just differ by a little bit and module includes just aren't solving the problem of doubling, tripling, etc. the number of files you are having to create just to represent new classes.
+It's useful if you have a number of classes, like models, that just differ by a little bit and module includes just aren't solving the problem of doubling, tripling, etc. the number of files you are having to create just to represent new classes.
 
 ### Just Rails?
 
-Feel free to do a pull request and add off-Rails support.
+Feel free to add off-Rails support and do a pull request.
 
 ### Quick Test!
 

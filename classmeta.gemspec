@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Classmeta::VERSION
   s.authors     = ['Gary S. Weaver']
   s.email       = ['garysweaver@gmail.com']
-  s.homepage    = 'https://github.com/garysweaver/activerecord-refs'
+  s.homepage    = 'https://github.com/garysweaver/classmeta'
   s.summary     = %q{Magic class creation.}
   s.description = 'Magic class creator that lets you create and transform classes dynamically.'
   s.files = Dir['lib/**/*'] + ['Rakefile', 'README.md']
