@@ -86,7 +86,7 @@ It might work with Rails 2.3, depending on whether the Railtie is compatible or 
 Ruby 1.9 is expected because of the way `SecureRandom` is abused for classes that aren't given a defined name via `named_meta`, but it will work with Ruby 1.8.x. Try adding this on the load path, like `config/environment.rb`:
 
     class SecureRandom
-      # not guaranteed to be unique, but pretty close
+      # not guaranteed to be unique
       def self.uuid
         # from http://stackoverflow.com/questions/88311/how-best-to-generate-a-random-string-in-ruby
         o = [('a'..'z'),('A'..'Z')].map{|i|i.to_a}.flatten
@@ -97,7 +97,6 @@ Ruby 1.9 is expected because of the way `SecureRandom` is abused for classes tha
 Another way may be to delegate `uuid` to the deprecated `ActiveSupport::SecureRandom.uuid`, depending on your version of ActiveSupport:
 
     class SecureRandom
-      # not guaranteed to be unique, but pretty close
       def self.uuid
         ActiveSupport::SecureRandom.uuid
       end
