@@ -81,9 +81,11 @@ Note: if you define `Classmeta::Options.configure({...})`, it automatically gets
 
 ### Compatibility Notes
 
-It might work with Rails 2.3, depending on whether the Railtie is compatible or not.
+Not sure about Rails 2.3 compatibility. Let me know if you have any compatibility issues.
 
-Ruby 1.9 is expected because of the way `SecureRandom` is abused for classes that aren't given a defined name via `named_meta`, but it will work with Ruby 1.8.x. Try adding this on the load path, like `config/environment.rb`:
+Ruby 1.9 is expected because of the way `SecureRandom` is abused for classes that aren't given a defined name via `named_meta`.
+
+But, it should work in Ruby 1.8.x if you try adding one of the following on the load path, e.g. in `config/environment.rb`:
 
     class SecureRandom
       # not guaranteed to be unique
@@ -94,7 +96,7 @@ Ruby 1.9 is expected because of the way `SecureRandom` is abused for classes tha
       end
     end
 
-Another way may be to delegate `uuid` to the deprecated `ActiveSupport::SecureRandom.uuid`, depending on your version of ActiveSupport:
+or maybe:
 
     class SecureRandom
       def self.uuid
