@@ -1,6 +1,7 @@
 module Classmeta
   class Options
     @@options = {
+      :debug => false,
       :transformers => {
         :echo => Classmeta::Echo
       }
@@ -8,6 +9,10 @@ module Classmeta
 
     def self.configure(hash)
       @@options = hash
+    end
+
+    def self.debugging?
+      @@options[:debug]
     end
 
     def self.get_transformer(name)
