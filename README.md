@@ -62,9 +62,9 @@ This generates a new class named "MyModel<some unique random string>" sending th
 
     MyModel.meta(:awesome, attrs: [:name, :status], another_key: 'another_value')
 
-This generates a new class named "MyModel<some unique random string>" sending that class and options hash `attrs: [:name, :status], another_key: 'another_value', this_is_cool: {a: 1, b: {c: 1, d: 2}}` to the transform function of transformers associated with the :awesome and :bitchin keys in Classmeta::Options:
+This generates a new class named "MyModel<some unique random string>" sending that class and options hash `attrs: [:name, :status], another_key: 'another_value', and_a_hash: {a: 1, b: {c: 1, d: 2}}` to the transform function of transformers associated with the :awesome and :bitchin keys in Classmeta::Options:
 
-    MyModel.meta(:awesome, :bitchin, attrs: [:name, :status], another_key: 'another_value', this_is_cool: {a: 1, b: {c: 1, d: 2}})
+    MyModel.meta(:awesome, :bitchin, attrs: [:name, :status], another_key: 'another_value', and_a_hash: {a: 1, b: {c: 1, d: 2}})
 
 ### Named metas
 
@@ -80,19 +80,19 @@ This generates a new class named "Fabular" sending that class and options hash `
 
     MyModel.named_meta('Fabular', :awesome, {attrs: [:name, :status], another_key: 'another_value'})
 
-This generates a new class named "Fabular" sending that class and options hash `attrs: [:name, :status], another_key: 'another_value', this_is_cool: {a: 1, b: {c: 1, d: 2}}` to the transform function of transformers associated with the :awesome and :bitchin keys in Classmeta::Options:
+This generates a new class named "Fabular" sending that class and options hash `attrs: [:name, :status], another_key: 'another_value', and_a_hash: {a: 1, b: {c: 1, d: 2}}` to the transform function of transformers associated with the :awesome and :bitchin keys in Classmeta::Options:
 
-    MyModel.named_meta('Fabular', [:awesome, :bitchin], {attrs: [:name, :status], another_key: 'another_value', this_is_cool: {a: 1, b: {c: 1, d: 2}}})
+    MyModel.named_meta('Fabular', [:awesome, :bitchin], {attrs: [:name, :status], another_key: 'another_value', and_a_hash: {a: 1, b: {c: 1, d: 2}}})
 
 ### 'm' and 'n' functions
 
 Instead of `meta`, use `m`:
 
-    MyModel.m(:awesome, :bitchin, attrs: [:name, :status], another_key: 'another_value', this_is_cool: {a: 1, b: {c: 1, d: 2}})
+    MyModel.m(:awesome, :bitchin, attrs: [:name, :status], another_key: 'another_value', and_a_hash: {a: 1, b: {c: 1, d: 2}})
 
 Instead of `named_meta`, use `n`:
 
-    MyModel.n('Fabular', [:awesome, :bitchin], {attrs: [:name, :status], another_key: 'another_value', this_is_cool: {a: 1, b: {c: 1, d: 2}}})
+    MyModel.n('Fabular', [:awesome, :bitchin], {attrs: [:name, :status], another_key: 'another_value', and_a_hash: {a: 1, b: {c: 1, d: 2}}})
 
 ### Try it out
 
