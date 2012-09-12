@@ -54,17 +54,17 @@ This generates a new class named "MyModel<some unique random string>" sending th
 
     MyModel.meta
 
-This generates a new class named "MyModel<some unique random string>" sending that class and options hash `attrs: [:name, :status], special_column: 'my_column'` to the transform function of transformer associated with the :default key in Classmeta::Options if there is one, otherwise it will just generate a new model class with the same behavior as the old one and not transform it:
+This generates a new class named "MyModel<some unique random string>" sending that class and options hash `attrs: [:name, :status], another_key: 'another_value'` to the transform function of transformer associated with the :default key in Classmeta::Options if there is one, otherwise it will just generate a new model class with the same behavior as the old one and not transform it:
 
-    MyModel.meta(attrs: [:name, :status], special_column: 'my_column')
+    MyModel.meta(attrs: [:name, :status], another_key: 'another_value')
 
-This generates a new class named "MyModel<some unique random string>" sending that class and options hash `attrs: [:name, :status], special_column: 'my_column'` to the transform function of transformer associated with the :awesome key in Classmeta::Options:
+This generates a new class named "MyModel<some unique random string>" sending that class and options hash `attrs: [:name, :status], another_key: 'another_value'` to the transform function of transformer associated with the :awesome key in Classmeta::Options:
 
-    MyModel.meta(:awesome, attrs: [:name, :status], special_column: 'my_column')
+    MyModel.meta(:awesome, attrs: [:name, :status], another_key: 'another_value')
 
-This generates a new class named "MyModel<some unique random string>" sending that class and options hash `attrs: [:name, :status], special_column: 'my_column', somethin_else: {a: 1, b: {c: 1, d: 2}}` to the transform function of transformers associated with the :awesome and :bitchin keys in Classmeta::Options:
+This generates a new class named "MyModel<some unique random string>" sending that class and options hash `attrs: [:name, :status], another_key: 'another_value', this_is_cool: {a: 1, b: {c: 1, d: 2}}` to the transform function of transformers associated with the :awesome and :bitchin keys in Classmeta::Options:
 
-    MyModel.meta(:awesome, :bitchin, attrs: [:name, :status], special_column: 'my_column', somethin_else: {a: 1, b: {c: 1, d: 2}})
+    MyModel.meta(:awesome, :bitchin, attrs: [:name, :status], another_key: 'another_value', this_is_cool: {a: 1, b: {c: 1, d: 2}})
 
 ### Named metas
 
@@ -72,27 +72,27 @@ This generates a new class named "Fabular" sending that class and nil options ha
 
     MyModel.named_meta('Fabular')
 
-This generates a new class named "Fabular" sending that class and options hash `attrs: [:name, :status], special_column: 'my_column'` to the transform function of transformer associated with the :default key in Classmeta::Options if there is one, otherwise it will just generate a new model class with the same behavior as the old one and not transform it:
+This generates a new class named "Fabular" sending that class and options hash `attrs: [:name, :status], another_key: 'another_value'` to the transform function of transformer associated with the :default key in Classmeta::Options if there is one, otherwise it will just generate a new model class with the same behavior as the old one and not transform it:
 
-    MyModel.named_meta('Fabular', {attrs: [:name, :status], special_column: 'my_column'})
+    MyModel.named_meta('Fabular', {attrs: [:name, :status], another_key: 'another_value'})
 
-This generates a new class named "Fabular" sending that class and options hash `attrs: [:name, :status], special_column: 'my_column'` to the transform function of transformer associated with the :awesome key in Classmeta::Options:
+This generates a new class named "Fabular" sending that class and options hash `attrs: [:name, :status], another_key: 'another_value'` to the transform function of transformer associated with the :awesome key in Classmeta::Options:
 
-    MyModel.named_meta('Fabular', :awesome, {attrs: [:name, :status], special_column: 'my_column'})
+    MyModel.named_meta('Fabular', :awesome, {attrs: [:name, :status], another_key: 'another_value'})
 
-This generates a new class named "Fabular" sending that class and options hash `attrs: [:name, :status], special_column: 'my_column', somethin_else: {a: 1, b: {c: 1, d: 2}}` to the transform function of transformers associated with the :awesome and :bitchin keys in Classmeta::Options:
+This generates a new class named "Fabular" sending that class and options hash `attrs: [:name, :status], another_key: 'another_value', this_is_cool: {a: 1, b: {c: 1, d: 2}}` to the transform function of transformers associated with the :awesome and :bitchin keys in Classmeta::Options:
 
-    MyModel.named_meta('Fabular', [:awesome, :bitchin], {attrs: [:name, :status], special_column: 'my_column', somethin_else: {a: 1, b: {c: 1, d: 2}}})
+    MyModel.named_meta('Fabular', [:awesome, :bitchin], {attrs: [:name, :status], another_key: 'another_value', this_is_cool: {a: 1, b: {c: 1, d: 2}}})
 
 ### 'm' and 'n' functions
 
 Instead of `meta`, use `m`:
 
-    MyModel.m(:awesome, :bitchin, attrs: [:name, :status], special_column: 'my_column', somethin_else: {a: 1, b: {c: 1, d: 2}})
+    MyModel.m(:awesome, :bitchin, attrs: [:name, :status], another_key: 'another_value', this_is_cool: {a: 1, b: {c: 1, d: 2}})
 
 Instead of `named_meta`, use `n`:
 
-    MyModel.n('Fabular', [:awesome, :bitchin], {attrs: [:name, :status], special_column: 'my_column', somethin_else: {a: 1, b: {c: 1, d: 2}}})
+    MyModel.n('Fabular', [:awesome, :bitchin], {attrs: [:name, :status], another_key: 'another_value', this_is_cool: {a: 1, b: {c: 1, d: 2}}})
 
 ### Try it out
 
